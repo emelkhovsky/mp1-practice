@@ -3,7 +3,7 @@
 #include "time.h"
 void mode_1() {
 	int random, user, kol;
-	random = rand() % 1000 + 1;
+	random = rand() % 1000 + 1 ;
 	kol = 0;
 	printf("Компьютер загадал число от 1 до 1000!\nПопробуй угадать!\n");
 	//	printf("%d\n",random);
