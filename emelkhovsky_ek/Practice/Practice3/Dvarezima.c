@@ -1,4 +1,4 @@
-﻿#include "stdio.h"
+#include "stdio.h"
 #include "locale.h"
 #include "time.h"
 void mode_1() {
@@ -78,3 +78,5 @@ void main() {
 	}
 
 }
+
+
