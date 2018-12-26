@@ -2,79 +2,79 @@
 #include "locale.h"
 #include "time.h"
 void mode_1() {
-	int random, user, kol;
-	random = rand() % 1000 + 1 ;
-	kol = 0;
-	printf("Компьютер загадал число от 1 до 1000!\nПопробуй угадать!\n");
-	//	printf("%d\n",random);
-	scanf("%d", &user);
-	while (user != random) {
-		while ((user<1) || (user>1000)) {
-			printf("Корректный ввод от 1 до 1000\n");
-			scanf("%d", &user);
-		}
-		kol++;
-		if (user>random) {
-			printf("Вы ввели число больше, чем загаданное\n");
-		}
-		else if (user<random) {
-			printf("Вы ввели число меньше чем загаданное\n");
-		}
-		scanf("%d", &user);
-	}
-	printf("Вы угадали число с %d попытки \n", kol);
+    int random, user, kol;
+    random = rand() % 1000 + 1 ;
+    kol = 0;
+    printf("РљРѕРјРїСЊСЋС‚РµСЂ Р·Р°РіР°РґР°Р» С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ 1000!\nРџРѕРїСЂРѕР±СѓР№ СѓРіР°РґР°С‚СЊ!\n");
+    //    printf("%d\n",random);
+    scanf("%d", &user);
+    while (user != random) {
+        while ((user < 1) || (user > 1000)) {
+            printf("РљРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ РѕС‚ 1 РґРѕ 1000\n");
+            scanf("%d", &user);
+        }
+        kol++;
+        if (user > random) {
+            printf("Р’С‹ РІРІРµР»Рё С‡РёСЃР»Рѕ Р±РѕР»СЊС€Рµ, С‡РµРј Р·Р°РіР°РґР°РЅРЅРѕРµ\n");
+        }
+        else if (user < random) {
+            printf("Р’С‹ РІРІРµР»Рё С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ С‡РµРј Р·Р°РіР°РґР°РЅРЅРѕРµ\n");
+        }
+        scanf("%d", &user);
+    }
+    printf("Р’С‹ СѓРіР°РґР°Р»Рё С‡РёСЃР»Рѕ СЃ %d РїРѕРїС‹С‚РєРё \n", kol);
 }
 
 
 void mode_2() {
-	int user, random, a, b, kol;
-	kol = 0;
-	b = 1001;
-	a = 1;
-	char o;
-	printf("Введите число которое будет отгадывать компьютер\n");
-	scanf("%d", &user);
+    int user, random, a, b, kol;
+    kol = 0;
+    b = 1001;
+    a = 1;
+    char o;
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РѕС‚РіР°РґС‹РІР°С‚СЊ РєРѕРјРїСЊСЋС‚РµСЂ\n");
+    scanf("%d", &user);
 
-	while ((user<1) || (user>1000)) {
-		printf("Корректный ввод от 1 до 1000\n");
-		scanf("%d", &user);
-	}
+    while ((user < 1) || (user > 1000)) {
+        printf("РљРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ РѕС‚ 1 РґРѕ 1000\n");
+        scanf("%d", &user);
+    }
 
-	random = rand() % (b - a) + a;
-	printf("Компьютер загадал число %d, введите Ваше число больше, меньше или равно?\n", random);
+    random = rand() % (b - a) + a;
+    printf("РљРѕРјРїСЊСЋС‚РµСЂ Р·Р°РіР°РґР°Р» С‡РёСЃР»Рѕ %d, РІРІРµРґРёС‚Рµ Р’Р°С€Рµ С‡РёСЃР»Рѕ Р±РѕР»СЊС€Рµ, РјРµРЅСЊС€Рµ РёР»Рё СЂР°РІРЅРѕ?\n", random);
 
-	while (random != user) {
-		kol++;
-		scanf("%s", &o);
+    while (random != user) {
+        kol++;
+        scanf("%s", &o);
 
-		if (o == '>') {
-			a = random + 1;
-		}
-		else if (o == '<') {
-			b = random;
-		}
+        if (o == '>') {
+            a = random + 1;
+        }
+        else if (o == '<') {
+            b = random;
+        }
 
-		else break;
-		random = rand() % (b - a) + a;
-		printf("Компьютер загадал число %d, введите Ваше число больше, меньше или равно?\n", random);
-	}
-	printf("Компьютер угадал с %d попытки \n", kol);
+        else break;
+        random = rand() % (b - a) + a;
+        printf("РљРѕРјРїСЊСЋС‚РµСЂ Р·Р°РіР°РґР°Р» С‡РёСЃР»Рѕ %d, РІРІРµРґРёС‚Рµ Р’Р°С€Рµ С‡РёСЃР»Рѕ Р±РѕР»СЊС€Рµ, РјРµРЅСЊС€Рµ РёР»Рё СЂР°РІРЅРѕ?\n", random);
+    }
+    printf("РљРѕРјРїСЊСЋС‚РµСЂ СѓРіР°РґР°Р» СЃ %d РїРѕРїС‹С‚РєРё \n", kol);
 }
 void main() {
 
-	int mode;
-	srand(time(NULL));
-	setlocale(LC_ALL, "Russian");
-	printf("Введите режим:\n1 чтобы разгадывать число\n2 чтобы загадывать число\n");
-	scanf("%d", &mode);
-	if (mode == 1) {
-		mode_1();
-	}
-	else if (mode == 2) {
-		mode_2();
-	}
-	else {
-		printf("Всего 2 режима");
-	}
+    int mode;
+    srand(time(NULL));
+    setlocale(LC_ALL, "Russian");
+    printf("Р’РІРµРґРёС‚Рµ СЂРµР¶РёРј:\n1 С‡С‚РѕР±С‹ СЂР°Р·РіР°РґС‹РІР°С‚СЊ С‡РёСЃР»Рѕ\n2 С‡С‚РѕР±С‹ Р·Р°РіР°РґС‹РІР°С‚СЊ С‡РёСЃР»Рѕ\n");
+    scanf("%d", &mode);
+    if (mode == 1) {
+        mode_1();
+    }
+    else if (mode == 2) {
+        mode_2();
+    }
+    else {
+        printf("Р’СЃРµРіРѕ 2 СЂРµР¶РёРјР°");
+    }
 
 }
