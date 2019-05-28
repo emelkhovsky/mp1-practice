@@ -7,8 +7,7 @@
 #define BUF 2048
 #define MAX 65535
 
-void INPUT_PATH(wchar_t **sDir)
-{
+void INPUT_PATH(wchar_t **sDir){
     char *str;
     *sDir = (wchar_t*)malloc(BUF * sizeof(wchar_t));
     str = (char*)malloc(BUF * sizeof(char));
@@ -18,8 +17,7 @@ void INPUT_PATH(wchar_t **sDir)
     free(str);
 }
 
-int DIRECTORY(const wchar_t *sDir, wchar_t ***fName, ULONGLONG **fSize)
-{
+int DIRECTORY(const wchar_t *sDir, wchar_t ***fName, ULONGLONG **fSize){
     int i = 0;
     WIN32_FIND_DATA fdFile;
     HANDLE hFind = NULL;
@@ -29,9 +27,7 @@ int DIRECTORY(const wchar_t *sDir, wchar_t ***fName, ULONGLONG **fSize)
     wsprintf(ssPath, L"%s\\*.*", sDir);
     if ((hFind = FindFirstFile(ssPath, &fdFile)) == INVALID_HANDLE_VALUE)
         return -1;
-
-    do
-    {
+    do{
         if (wcscmp(fdFile.cFileName, L".") != 0 && wcscmp(fdFile.cFileName, L"..") != 0)
             i++;
     } while (FindNextFile(hFind, &fdFile));
@@ -40,10 +36,8 @@ int DIRECTORY(const wchar_t *sDir, wchar_t ***fName, ULONGLONG **fSize)
     *fName = (wchar_t**)malloc(i * sizeof(wchar_t*));//выделяю память под массив названий
     *fSize = (ULONGLONG*)malloc(i * sizeof(ULONGLONG)); // выделяю память под массив размеров
     i = 0;
-    do
-    {
-        if (wcscmp(fdFile.cFileName, L".") != 0 && wcscmp(fdFile.cFileName, L"..") != 0)
-        {
+    do{
+        if (wcscmp(fdFile.cFileName, L".") != 0 && wcscmp(fdFile.cFileName, L"..") != 0){
             ULONGLONG fileSize = fdFile.nFileSizeHigh;
             fileSize <<= sizeof(fdFile.nFileSizeHigh) * 8;
             fileSize |= fdFile.nFileSizeLow;
@@ -62,8 +56,7 @@ int DIRECTORY(const wchar_t *sDir, wchar_t ***fName, ULONGLONG **fSize)
 }
 
 
-void OUTPUT(int *fIndex, wchar_t **fName, ULONGLONG *fSize, int kol)
-{
+void OUTPUT(int *fIndex, wchar_t **fName, ULONGLONG *fSize, int kol){
     int i;
     for (i = 0; i < kol; i++) {
         wprintf(L"%d: Файл: %s Размер: ", i, fName[fIndex[i]]);
@@ -101,8 +94,7 @@ void SORT_INSERT(ULONGLONG *sizes, int *idxes, int kol) {
     }
 }
 
-void SORT_BUBBLE(ULONGLONG *sizes, int *idxes, int kol)
-{
+void SORT_BUBBLE(ULONGLONG *sizes, int *idxes, int kol){
     ULONGLONG tmp;
     int i, j, *newIndex;
     for (i = 0; i < kol; i++)
@@ -151,8 +143,7 @@ void SORT_COUNT(ULONGLONG *sizes, int *idxes, int kol) {
 }
 
 
-void SORT_HOARA2(ULONGLONG *sizes, int *idxes, int *i, int *j, ULONGLONG m)
-{
+void SORT_HOARA2(ULONGLONG *sizes, int *idxes, int *i, int *j, ULONGLONG m){
     int tmp;
     do {
         while (sizes[idxes[(*i)]] < m)
@@ -171,8 +162,7 @@ void SORT_HOARA2(ULONGLONG *sizes, int *idxes, int *i, int *j, ULONGLONG m)
 }
 
 
-void SORT_HOARA1(ULONGLONG *sizes, int *idxes, int n1, int n2)
-{
+void SORT_HOARA1(ULONGLONG *sizes, int *idxes, int n1, int n2){
     int middle = (n1 + n2) / 2;
     int i = n1, j = n2;
     SORT_HOARA2(sizes, idxes, &i, &j, sizes[idxes[middle]]);
