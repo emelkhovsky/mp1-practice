@@ -33,4 +33,5 @@ void main() {
     m = m + v5 * pDSP;
     printf("масса шкафа %f\n", m,"\n");
 
+
 }
