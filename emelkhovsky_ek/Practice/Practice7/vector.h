@@ -1,30 +1,45 @@
-#ifndef _VECTOR_H_
+п»ї#ifndef _VECTOR_H_
 #define _VECTOR_H_
 #include <iostream>
 #include <math.h>
-typedef struct vector {
-	int n;//кол-во векторов
-	double *x;//компоненты вектора
-	vector();
-	vector(int n);
-	vector(vector& cop);
-	~vector();
-	vector& vector::operator=(const vector& t);
-	vector vector::operator+(const vector& t);
-	vector vector::operator-(const vector& t);
-	vector vector::operator*(const vector& t);
-	vector vector::operator+(double con);
-	vector vector::operator-(double con);
-	vector vector::operator*(double con);
-	vector vector::operator+=(const vector& t);
-	vector vector::operator-=(const vector& t);
-	vector vector::operator*=(const vector& t);
-	vector vector::operator+=(double con);
-	vector vector::operator-=(double con);
-	vector vector::operator*=(double con);
-	double vector::lenght();
-	void vector::Output();
-	void vector::Input();
-	double& vector::operator[](int i);
+class vector {
+private:
+    int n;//РєРѕР»-РІРѕ РІРµРєС‚РѕСЂРѕРІ
+    double *x;//РєРѕРјРїРѕРЅРµРЅС‚С‹ РІРµРєС‚РѕСЂР°
+public:
+    vector(int n);
+    vector(vector& cop);
+    ~vector();
+    const vector& operator=(const vector& t);
+    vector operator+(const vector& t);
+    vector operator-(const vector& t);
+    vector operator*(const vector& t);
+    vector operator+(double con);
+    vector operator-(double con);
+    vector operator*(double con);
+    vector& operator+=(const vector& t);
+    vector& operator-=(const vector& t);
+    vector& operator*=(const vector& t);
+    vector& operator+=(double con);
+    vector& operator-=(double con);
+    vector& operator*=(double con);
+    double lenght();
+    double& operator[](int i);
+    const double& operator[](int i) const;
+    friend ostream& operator<<(ostream& out, const vector& v) {
+        out << "(" << v.x[0];
+        for (int i = 1; i < v.n; i++)
+            out << ", " << v.x[i];
+        out << ")" << endl;
+        return out;
+    };
+    friend istream& operator>>(istream& put, vector& v) {
+        v.x = new double[v.n];
+        cout << "В¬РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚С‹ РІРµРєС‚РѕСЂР°" << endl;
+        for (int i = 0; i < v.n; i++)
+            put >> v.x[i];
+        return put;
+    };
+
 };
 #endif

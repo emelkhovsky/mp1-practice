@@ -1,96 +1,129 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "vector.h"
-#include "locale.h"
-#include "Exception.h"
+#include <locale.h>
+#include "exception.h"
 using namespace std;
 void main() {
-	try {
-		int n, i;
-		double con, len;
-		setlocale(LC_ALL, "Rus");
-		cout << "Ââåäèòå ðàçìåðíîñòü âåêòîðîâ" << endl;
-		cin >> n;
-		vector a(n), b(n), c(n);
-		a.Input();
-		b.Input();
-		cout << "Êîîðäèíàòû âåêòîðà a: ";
-		a.Output();
-		cout << "Êîîðäèíàòû âåêòîðà b: ";
-		b.Output();
-		cout << "Êîîðäèíàòû âåêòîðà c: ";
-		c.Output();
-		//----------------------------------
-		//a+b
-		cout << "a+b: " << endl;
-		c = a + b;
-		c.Output();
-		//a-b
-		cout << "a-b: " << endl;
-		c = a - b;
-		c.Output();
-		//ñêàëÿðíîå ïðîèçâåäåíèå a*b
-		cout << "a*b: " << endl;
-		c = a * b;
-		c.Output();
-		//-----------------------------------
-		cout << "Ââåäèòå êîíñòàíòó" << endl;
-		cin >> con;
-		//a+con
-		cout << "a+con: " << endl;
-		c = a + con;
-		c.Output();
-		//a-con
-		cout << "a-con: " << endl;
-		c = a - con;
-		c.Output();
-		//a*con
-		cout << "a*con: " << endl;
-		c = a * con;
-		c.Output();
-		//-----------------------------------
-		//a+=b
-		cout << "a+=b: " << endl;
-		c = a;
-		c += b;
-		c.Output();
-		//a-b
-		cout << "a-=b: " << endl;
-		c = a;
-		c -= b;
-		c.Output();
-		//ñêàëÿðíîå ïðîèçâåäåíèå a*=b
-		cout << "a*=b: " << endl;
-		c = a;
-		c *= b;
-		c.Output();
-		//-----------------------------------
-		//a+=con
-		cout << "a+con: " << endl;
-		c = a;
-		c += con;
-		c.Output();
-		//a-=con
-		cout << "a-con: " << endl;
-		c = a;
-		c -= con;
-		c.Output();
-		//a*=con
-		cout << "a*con: " << endl;
-		c = a;
-		c *= con;
-		c.Output();
-		//------------------------------------------
-		len = a.lenght();
-		cout << "Äëèííà âåêòîðà a: " << len << endl;
-		len = b.lenght();
-		cout << "Äëèííà âåêòîðà b: " << len << endl;
-		//------------------------------------------
-		cout << "Êàêóþ êîîðäèíàòó â âåêòîðå a Âû õîòèòå âûâåñòè?" << endl;
-		cin >> i;
-		cout << a[i] << endl;
-	}
-	catch (Exception ex)
-	{
-		ex.Print();
-	}
+    try {
+        int n, i;
+        double con, len;
+        setlocale(LC_ALL, "Rus");
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð¾Ð²" << endl;
+        cin >> n;
+        vector a(n), b(n), c(n), d(n-1);
+        cin >> a;
+        cin >> b;
+        cout << "ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð° a: ";
+        cout << a;
+        cout << "ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð° b: ";
+        cout << b;
+        cout << "ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð° c: ";
+        cout << c;
+        cout << "ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð²ÐµÐºÑ‚Ð¾Ñ€Ð° d: ";
+        cout << d;
+        //----------------------------------
+        try {
+            //a+b
+            cout << "a+b: " << endl;
+            c = a + b;
+            cout << c;
+            //a-b
+            cout << "a-b: " << endl;
+            c = a - b;
+            cout << c;
+            //ÑÐºÐ°Ð»ÑÑ€Ð½Ð¾Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ a*b
+            cout << "a*b: " << endl;
+            c = a * b;
+            cout << c;
+            //a+d(Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ, Ñ€Ð°Ð·Ð½Ñ‹Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚Ð¸)
+            cout << "a+d: " << endl;
+            c = a + d;
+            cout << c;
+        }
+        catch (std::exception& ex) {
+            std::cout << ex.what();
+        }
+        //-----------------------------------
+        try {//Ð±ÐµÐ· Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹
+            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð½ÑÑ‚Ð°Ð½Ñ‚Ñƒ" << endl;
+            cin >> con;
+            //a+con
+            cout << "a+con: " << endl;
+            c = a + con;
+            cout << c;
+            //a-con
+            cout << "a-con: " << endl;
+            c = a - con;
+            cout << c;
+            //a*con
+            cout << "a*con: " << endl;
+            c = a * con;
+            cout << c;
+        }
+        catch (std::exception& ex) {
+            std::cout << ex.what();
+        }
+        //-----------------------------------
+        try {
+            //a+=b
+            cout << "a+=b: " << endl;
+            c = a;
+            c += b;
+            cout << c;
+            //a-=b
+            cout << "a-=b: " << endl;
+            c = a;
+            c -= b;
+            cout << c;
+            //ÑÐºÐ°Ð»ÑÑ€Ð½Ð¾Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ a*=b
+            cout << "a*=b: " << endl;
+            c = a;
+            c *= b;
+            cout << c;
+            //ÑÐºÐ°Ð»ÑÑ€Ð½Ð¾Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ a*=d(Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ)
+            cout << "a*=d: " << endl;
+            c = a;
+            c *= d;
+            cout << c;
+        }
+        catch (std::exception& ex) {
+            std::cout << ex.what();
+        }
+        //-----------------------------------
+        try {//Ð±ÐµÐ· Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹
+            //a+=con
+            cout << "a+con: " << endl;
+            c = a;
+            c += con;
+            cout << c;
+            //a-=con
+            cout << "a-con: " << endl;
+            c = a;
+            c -= con;
+            cout << c;
+            //a*=con
+            cout << "a*con: " << endl;
+            c = a;
+            c *= con;
+            cout << c;
+        }
+        catch (std::exception& ex) {
+            std::cout << ex.what();
+        }
+        //------------------------------------------
+        len = a.lenght();
+        cout << "Ð”Ð»Ð¸Ð½Ð½Ð° Ð²ÐµÐºÑ‚Ð¾Ñ€Ð° a: " << len << endl;
+        len = b.lenght();
+        cout << "Ð”Ð»Ð¸Ð½Ð½Ð° Ð²ÐµÐºÑ‚Ð¾Ñ€Ð° b: " << len << endl;
+        //------------------------------------------
+        try {
+            cout << "ÐšÐ°ÐºÑƒÑŽ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñƒ Ð² Ð²ÐµÐºÑ‚Ð¾Ñ€Ðµ a Ð’Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð²Ñ‹Ð²ÐµÑÑ‚Ð¸?" << endl;
+            cin >> i;
+            cout << a[i] << endl;
+            cout << a[-1] << endl;//Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð·-Ð·Ð° Ð½ÐµÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ
+        }
+        catch (std::exception& ex) {
+            std::cout << ex.what();
+        }
+    
 }
