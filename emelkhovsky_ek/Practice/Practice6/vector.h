@@ -2,7 +2,7 @@
 #define _VECTOR_H_
 
 typedef struct {
-    int n;//размерность
+    int n;//размерность 
     float *x;//набор компонент
 }vector;
 
