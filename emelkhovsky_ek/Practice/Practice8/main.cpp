@@ -72,7 +72,7 @@ void main() {
 	mat3 *= con;
 	mat3.output();
 }
-catch (Exception ex)
+catch (exception ex)
 {
 	ex.Print();
 }

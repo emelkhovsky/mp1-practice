@@ -4,15 +4,7 @@
 #include <string>
 using namespace std;
 
-class Exception
-{
-private:
-	string e;
-public:
-	Exception(string _e) : e(_e) {};
-	void Print()
-	{
-		cout << " Error: " << e << endl;
-	}
+struct error : std::exception {
+	const char* what() const noexcept { return "Error!\n"; }
 };
 #endif

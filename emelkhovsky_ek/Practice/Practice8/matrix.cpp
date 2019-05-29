@@ -1,7 +1,7 @@
-#include"iostream"
+#include<iostream>
 #include "Exception.h"
 #include"matrix.h"
-#include"locale.h"
+#include<locale.h>
 using namespace std;
 //--------------конструкторы, деструкторы------------------
 matrix::matrix() {
@@ -13,7 +13,7 @@ matrix::matrix() {
 };
 matrix::matrix(int c, int r) {
 	if ((c <= 0) || (r <= 0))
-		throw Exception("Невозможный размер матрирцы!");
+		throw exception("Невозможный размер матрирцы!");
 	columns = c;
 	rows = r;
 	mat = new int[columns*rows];
@@ -47,7 +47,7 @@ const matrix& matrix::operator=(const matrix& m) {
 //--------------обычные операции с матрицами-------------------
 matrix matrix::operator+(const matrix& m) {
 	if ((rows != m.rows) || (columns != m.columns))
-		throw Exception("Неподходящий размер матрицы!");
+		throw exception("Неподходящий размер матрицы!");
 	matrix result(m.columns, m.rows);
 	for (int i = 0; i < columns*rows; i++)
 		result.mat[i] = m.mat[i]+mat[i];
@@ -55,7 +55,7 @@ matrix matrix::operator+(const matrix& m) {
 };
 matrix matrix::operator-(const matrix& m) {
 	if ((rows != m.rows) || (columns != m.columns))
-		throw Exception("Неподходящий размер матрицы!");
+		throw exception("Неподходящий размер матрицы!");
 	matrix result(m.columns, m.rows);
 	for (int i = 0; i < columns*rows; i++)
 		result.mat[i] =  mat[i]-m.mat[i];
@@ -63,7 +63,7 @@ matrix matrix::operator-(const matrix& m) {
 };
 matrix matrix::operator*(const matrix& m) {
 	if (columns != m.rows)
-		throw Exception("Неподходящий размер матрицы!");
+		throw exception("Неподходящий размер матрицы!");
 	matrix result(m.columns, rows);
 	int c=0, r=0;
 	for (int i = 0; i < rows; i++) 
@@ -92,14 +92,14 @@ matrix matrix::operator*(int con) {
 //----------операции типа += с матрицами------------
 matrix matrix::operator+=(const matrix& m) {
 	if ((rows != m.rows) || (columns != m.columns))
-		throw Exception("Неподходящий размер матрицы!");
+		throw exception("Неподходящий размер матрицы!");
 	for (int i = 0; i < columns*rows; i++)
 		mat[i] += m.mat[i];
 	return *this;
 }
 matrix matrix::operator-=(const matrix& m) {
 	if ((rows != m.rows) || (columns != m.columns))
-		throw Exception("Неподходящий размер матрицы!");
+		throw exception("Неподходящий размер матрицы!");
 	for (int i = 0; i < columns*rows; i++)
 		mat[i] -= m.mat[i];
 	return *this;
@@ -138,7 +138,7 @@ void matrix::output() {
 };
 int* matrix::operator[](int index) {
 	if ((index < 0) || (index >= rows))
-		throw Exception("Некорректно введенный индекс!");
+		throw exception("Некорректно введенный индекс!");
 	return(mat + columns * index);
 }
 void matrix::input() {
@@ -146,7 +146,7 @@ void matrix::input() {
 	cin>>columns;
 	cin>>rows;
 	if ((columns <= 0) || (rows <= 0))
-		throw Exception("Невозможный размер матрирцы!");
+		throw exception("Невозможный размер матрирцы!");
 	cout << "Введите элементы матрицы(построчно)" << endl;
 	mat = new int[columns*rows];
 	for (int i = 0; i < columns*rows; i++)
