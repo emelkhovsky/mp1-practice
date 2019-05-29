@@ -1,11 +1,10 @@
-#ifndef _VECTOR_H_
+п»ї#ifndef _VECTOR_H_
 #define _VECTOR_H_
 
 typedef struct {
-    int n;//размерность 
-    float *x;//набор компонент
+    int n;//СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ 
+    float *x;//РЅР°Р±РѕСЂ РєРѕРјРїРѕРЅРµРЅС‚
 }vector;
-
 vector create();
 void del(vector c);
 void output(vector c);
