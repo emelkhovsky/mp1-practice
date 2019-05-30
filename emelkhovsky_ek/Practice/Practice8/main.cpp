@@ -1,99 +1,99 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include"matrix.h"
 #include<locale.h>
 using namespace std;
 void main() {
-	int con;
-	setlocale(LC_ALL, "Rus");
-	matrix a, b, mat3;
-	cin >> a;
-	cin >> b;
-	cout << "1àÿ ìàòðèöà: " << endl;
-	cout << a << endl;
-	cout << "2àÿ ìàòðèöà: " << endl;
-	cout << b << endl;
-	cout << "3àÿ ìàòðèöà: " << endl;
-	cout << mat3 << endl;
-	//----------------------------------
-	try {
-		//a+b
-		cout << "a+b: " << endl;
-		mat3 = a + b;
-		cout << mat3 << endl;
-		//a-b
-		cout << "a-b: " << endl;
-		mat3 = a - b;
-		cout << mat3 << endl;
-		//a*b
-		cout << "a*b: " << endl;
-		mat3 = a * b;
-		cout << mat3 << endl;
-	}
-	catch (matrixrazmer) {
-		std::cout << "Íåïîäõîäÿùèé ðàçìåð ìàòðèöû!\n";
-	}
-	//-----------------------------------
-	try {
-		cout << "Ââåäèòå êîíñòàíòó" << endl;
-		cin >> con;
-		//a+con
-		cout << "a+con: " << endl;
-		mat3 = a + con;
-		cout << mat3 << endl;
-		//a-con
-		cout << "a-con: " << endl;
-		mat3 = a - con;
-		cout << mat3 << endl;
-		//a*con
-		cout << "a*con: " << endl;
-		mat3 = a * con;
-		cout << mat3 << endl;
-	}
-	catch (matrixrazmer) {
-		std::cout << "Íåïîäõîäÿùèé ðàçìåð ìàòðèöû!\n";
-	}
-	//-----------------------------------
-	try {
-		//a+=b
-		cout << "a+=b: " << endl;
-		mat3 = a;
-		mat3 += b;
-		cout << mat3 << endl;
-		//a-b
-		cout << "a-=b: " << endl;
-		mat3 = a;
-		mat3 -= b;
-		cout << mat3 << endl;
-	}
-	catch (matrixrazmer) {
-		std::cout << "Íåïîäõîäÿùèé ðàçìåð ìàòðèöû!\n";
-	}
-	//-----------------------------------
-	try {
-		//a+=con
-		cout << "a+con: " << endl;
-		mat3 = a;
-		mat3 += con;
-		cout << mat3 << endl;
-		//a-=con
-		cout << "a-con: " << endl;
-		mat3 = a;
-		mat3 -= con;
-		cout << mat3 << endl;
-		//a*=con
-		cout << "a*con: " << endl;
-		mat3 = a;
-		mat3 *= con;
-		cout << mat3 << endl;
-	}
-	catch (matrixrazmer) {
-		std::cout << "Íåïîäõîäÿùèé ðàçìåð ìàòðèöû!\n";
-	}
-	try {
-		cout << a[4] << endl;
-		cout << a[-34];
-	}
-	catch (matrixrazmer) {
-		std::cout << "Íåêîððåêòíî ââåäåííûé èíäåêñ!\n";
-	}
+    int con;
+    setlocale(LC_ALL, "Rus");
+    matrix a, b, mat3;
+    cin >> a;
+    cin >> b;
+    cout << "1Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°: " << endl;
+    cout << a << endl;
+    cout << "2Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°: " << endl;
+    cout << b << endl;
+    cout << "3Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°: " << endl;
+    cout << mat3 << endl;
+    //----------------------------------
+    try {
+        //a+b
+        cout << "a+b: " << endl;
+        mat3 = a + b;
+        cout << mat3 << endl;
+        //a-b
+        cout << "a-b: " << endl;
+        mat3 = a - b;
+        cout << mat3 << endl;
+        //a*b
+        cout << "a*b: " << endl;
+        mat3 = a * b;
+        cout << mat3 << endl;
+    }
+    catch (matrixrazmer) {
+        std::cout << "ÐÐµÐ¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹!\n";
+    }
+    //-----------------------------------
+    try {
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð½ÑÑ‚Ð°Ð½Ñ‚Ñƒ" << endl;
+        cin >> con;
+        //a+con
+        cout << "a+con: " << endl;
+        mat3 = a + con;
+        cout << mat3 << endl;
+        //a-con
+        cout << "a-con: " << endl;
+        mat3 = a - con;
+        cout << mat3 << endl;
+        //a*con
+        cout << "a*con: " << endl;
+        mat3 = a * con;
+        cout << mat3 << endl;
+    }
+    catch (matrixrazmer) {
+        std::cout << "ÐÐµÐ¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹!\n";
+    }
+    //-----------------------------------
+    try {
+        //a+=b
+        cout << "a+=b: " << endl;
+        mat3 = a;
+        mat3 += b;
+        cout << mat3 << endl;
+        //a-b
+        cout << "a-=b: " << endl;
+        mat3 = a;
+        mat3 -= b;
+        cout << mat3 << endl;
+    }
+    catch (matrixrazmer) {
+        std::cout << "ÐÐµÐ¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹!\n";
+    }
+    //-----------------------------------
+    try {
+        //a+=con
+        cout << "a+con: " << endl;
+        mat3 = a;
+        mat3 += con;
+        cout << mat3 << endl;
+        //a-=con
+        cout << "a-con: " << endl;
+        mat3 = a;
+        mat3 -= con;
+        cout << mat3 << endl;
+        //a*=con
+        cout << "a*con: " << endl;
+        mat3 = a;
+        mat3 *= con;
+        cout << mat3 << endl;
+    }
+    catch (matrixrazmer) {
+        std::cout << "ÐÐµÐ¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹!\n";
+    }
+    try {
+        cout << a[4] << endl;
+        cout << a[-34];
+    }
+    catch (matrixrazmer) {
+        std::cout << "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ð¹ Ð¸Ð½Ð´ÐµÐºÑ!\n";
+    }
 }
