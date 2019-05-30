@@ -1,7 +1,8 @@
 ﻿#ifndef _VECTOR_H_
 #define _VECTOR_H_
 #include <iostream>
-#include <math.h>
+#include <string>
+#include <cstring>
 class vector {
 private:
     int n;//кол-во векторов
@@ -40,6 +41,16 @@ public:
             put >> v.x[i];
         return put;
     };
+};
 
+class vectorissue1 : std::exception{
+    const std::string what_str = "НЕдопустимый индекс";
+public:
+    const char* what() const;
+};
+class vectorissue2 : std::exception{
+    const std::string what_str = "Разные размерности!НЕдопустимо!";
+public:
+    const char* what() const;
 };
 #endif

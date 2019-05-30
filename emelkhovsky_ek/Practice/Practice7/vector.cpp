@@ -33,7 +33,7 @@ const vector& vector::operator=(const vector& t) {//перегрузка =
 }
 vector vector::operator+(const vector& t) {//перегрузка +
     if (n!= t.n)
-        throw exception("Разные размерности!НЕдопустимо!");
+        throw vectorissue2();
     vector c(n);
     for (int i = 0; i < n; i++) 
         c.x[i] = x[i] + t.x[i];
@@ -41,7 +41,7 @@ vector vector::operator+(const vector& t) {//перегрузка +
 }
 vector vector::operator-(const vector& t) {//перегрузка -
     if (n != t.n)
-        throw exception("Разные размерности!НЕдопустимо!");
+        throw vectorissue1();
     vector c(n);
     for (int i = 0; i < n; i++)
         c.x[i] = x[i] - t.x[i];
@@ -49,7 +49,7 @@ vector vector::operator-(const vector& t) {//перегрузка -
 }
 vector vector::operator*(const vector& t) {//перегрузка скалярное *
     if (n != t.n)
-        throw exception("Разные размерности!НЕдопустимо!");
+        throw vectorissue1();
     vector c(n);
     for (int i = 0; i < n; i++)
         c.x[i] = x[i] * t.x[i];
@@ -77,21 +77,21 @@ vector vector::operator*(double con) {//перегрузка * констант�
 //--------------------Перегрузки операций с векторами типа += ----------------------------
 vector& vector::operator+=(const vector& t) {//перегрузка +=
     if (n != t.n)
-        throw exception("Разные размерности!НЕдопустимо!");
+        throw vectorissue2();
     for (int i = 0; i < n; i++)
         x[i] += t.x[i];
     return *this;
 }
 vector& vector::operator-=(const vector& t) {//перегрузка -=
     if (n != t.n)
-        throw exception("Разные размерности!НЕдопустимо!");
+        throw vectorissue2();
     for (int i = 0; i < n; i++)
         x[i] -= t.x[i];
     return *this;
 }
 vector& vector::operator*=(const vector& t) {//перегрузка скалярное произведение*=
     if (n != t.n)
-        throw exception("Разные размерности!НЕдопустимо!");
+        throw vectorissue2();
     for (int i = 0; i < n; i++)
         x[i] *= t.x[i];
     return *this;
@@ -115,12 +115,12 @@ vector& vector::operator*=(double con) {//перегрузка * констан�
 //--------------------- Перегрузка [] ----------------------
 double& vector::operator[](int i) {
     if ((i < 0) || (i > n))
-        throw exception("НЕдопустимый индекс");
+        throw vectorissue2();
     return x[i-1];
 }
 const double& vector::operator[](int i) const {
     if ((i < 0) || (i > n))
-        throw exception("НЕдопустимый индекс");
+        throw vectorissue2();
     return x[i - 1];
 }
 //-------------------Различные методы-----------------------
@@ -130,6 +130,13 @@ double vector::lenght() {//длинна вектора
         len = len + x[i] * x[i];
     len = sqrt(len);
     return len;
+}
+//-------------для исключений-------------
+const char* vectorissue1::what() const{
+    return what_str.c_str();
+}
+const char* vectorissue2::what() const{
+    return what_str.c_str();
 }
 
 
