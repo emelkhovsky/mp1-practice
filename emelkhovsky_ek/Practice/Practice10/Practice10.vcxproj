@@ -120,7 +120,6 @@
   <ItemGroup>
     <ClInclude Include="container.h" />
     <ClInclude Include="containerup.h" />
-    <ClInclude Include="exceptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
