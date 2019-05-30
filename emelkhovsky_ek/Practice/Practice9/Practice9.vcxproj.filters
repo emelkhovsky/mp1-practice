@@ -30,9 +30,6 @@
     <ClInclude Include="task.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Exception.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="to_do_list.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
