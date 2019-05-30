@@ -1,79 +1,99 @@
-#include"iostream"
+#include<iostream>
 #include"matrix.h"
-#include"locale.h"
-#include "Exception.h"
+#include<locale.h>
 using namespace std;
 void main() {
-	try {
 	int con;
 	setlocale(LC_ALL, "Rus");
 	matrix a, b, mat3;
-	a.input();
-	b.input();
+	cin >> a;
+	cin >> b;
 	cout << "1ая матрица: " << endl;
-	a.output();
+	cout << a << endl;
 	cout << "2ая матрица: " << endl;
-	b.output();
+	cout << b << endl;
 	cout << "3ая матрица: " << endl;
-	mat3.output();
+	cout << mat3 << endl;
 	//----------------------------------
-	//a+b
-	cout << "a+b: " << endl;
-	mat3 = a + b;
-	mat3.output();
-	//a-b
-	cout << "a-b: " << endl;
-	mat3 = a - b;
-	mat3.output();
-	//a*b
-	cout << "a*b: " << endl;
-	mat3 = a * b;
-	mat3.output();
+	try {
+		//a+b
+		cout << "a+b: " << endl;
+		mat3 = a + b;
+		cout << mat3 << endl;
+		//a-b
+		cout << "a-b: " << endl;
+		mat3 = a - b;
+		cout << mat3 << endl;
+		//a*b
+		cout << "a*b: " << endl;
+		mat3 = a * b;
+		cout << mat3 << endl;
+	}
+	catch (matrixrazmer) {
+		std::cout << "Неподходящий размер матрицы!\n";
+	}
 	//-----------------------------------
-	cout << "Введите константу" << endl;
-	cin >> con;
-	//a+con
-	cout << "a+con: " << endl;
-	mat3 = a + con;
-	mat3.output();
-	//a-con
-	cout << "a-con: " << endl;
-	mat3 = a - con;
-	mat3.output();
-	//a*con
-	cout << "a*con: " << endl;
-	mat3 = a * con;
-	mat3.output();
+	try {
+		cout << "Введите константу" << endl;
+		cin >> con;
+		//a+con
+		cout << "a+con: " << endl;
+		mat3 = a + con;
+		cout << mat3 << endl;
+		//a-con
+		cout << "a-con: " << endl;
+		mat3 = a - con;
+		cout << mat3 << endl;
+		//a*con
+		cout << "a*con: " << endl;
+		mat3 = a * con;
+		cout << mat3 << endl;
+	}
+	catch (matrixrazmer) {
+		std::cout << "Неподходящий размер матрицы!\n";
+	}
 	//-----------------------------------
-	//a+=b
-	cout << "a+=b: " << endl;
-	mat3 = a;
-	mat3 += b;
-	mat3.output();
-	//a-b
-	cout << "a-=b: " << endl;
-	mat3 = a;
-	mat3 -= b;
-	mat3.output();
+	try {
+		//a+=b
+		cout << "a+=b: " << endl;
+		mat3 = a;
+		mat3 += b;
+		cout << mat3 << endl;
+		//a-b
+		cout << "a-=b: " << endl;
+		mat3 = a;
+		mat3 -= b;
+		cout << mat3 << endl;
+	}
+	catch (matrixrazmer) {
+		std::cout << "Неподходящий размер матрицы!\n";
+	}
 	//-----------------------------------
-	//a+=con
-	cout << "a+con: " << endl;
-	mat3 = a;
-	mat3 += con;
-	mat3.output();
-	//a-=con
-	cout << "a-con: " << endl;
-	mat3 = a;
-	mat3 -= con;
-	mat3.output();
-	//a*=con
-	cout << "a*con: " << endl;
-	mat3 = a;
-	mat3 *= con;
-	mat3.output();
-}
-catch (exception ex)
-{
-	ex.Print();
-}
+	try {
+		//a+=con
+		cout << "a+con: " << endl;
+		mat3 = a;
+		mat3 += con;
+		cout << mat3 << endl;
+		//a-=con
+		cout << "a-con: " << endl;
+		mat3 = a;
+		mat3 -= con;
+		cout << mat3 << endl;
+		//a*=con
+		cout << "a*con: " << endl;
+		mat3 = a;
+		mat3 *= con;
+		cout << mat3 << endl;
+	}
+	catch (matrixrazmer) {
+		std::cout << "Неподходящий размер матрицы!\n";
+	}
+	try {
+		cout << a[4] << endl;
+		cout << a[-34];
+	}
+	catch (matrixrazmer) {
+		std::cout << "Некорректно введенный индекс!\n";
+	}
 }

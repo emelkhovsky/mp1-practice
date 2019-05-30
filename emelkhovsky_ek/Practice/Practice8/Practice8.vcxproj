@@ -142,7 +142,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Exception.h" />
     <ClInclude Include="matrix.h" />
   </ItemGroup>
   <ItemGroup>
