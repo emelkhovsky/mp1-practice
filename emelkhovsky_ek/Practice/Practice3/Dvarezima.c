@@ -1,4 +1,4 @@
-#include  < stdio.h > 
+﻿#include  < stdio.h > 
 #include  < locale.h > 
 #include  < time.h > 
 void mode_1() {
@@ -53,30 +53,32 @@ void mode_2() {
         else if (o == ' < ') {
             b = random;
         }
-
-        else break;
         random = rand() % (b - a)  +  a;
         printf("Компьютер загадал число %d, введите Ваше число больше, меньше или равно?\n", random);
     }
     printf("Компьютер угадал с %d попытки \n", kol);
 }
-void main() {
 
+void main() {
     int mode;
     srand(time(NULL));
     setlocale(LC_ALL, "Russian");
-    printf("ведите режим:\n1 чтобы разгадывать число\n2 чтобы загадывать число\n");
+    printf("ведите режим:\n1 чтобы разгадывать число\n2 чтобы загадывать число\n0 чтобы закончит игру");
     scanf("%d", &mode);
-    if (mode == 1) {
-        mode_1();
+    while (mode != 0) {
+        if (mode == 0) {
+            break;
+        }
+        else if (mode == 1) {
+            mode_1();
+        }
+        else if (mode == 2) {
+            mode_2();
+        }
+        else {
+            printf("Всего 2 режима");
+        }
     }
-    else if (mode == 2) {
-        mode_2();
-    }
-    else {
-        printf("Всего 2 режима");
-    }
-
 }
 
 
