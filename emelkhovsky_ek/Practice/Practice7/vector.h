@@ -24,7 +24,7 @@ public:
     vector& operator+=(double con);
     vector& operator-=(double con);
     vector& operator*=(double con);
-    double lenght();
+    const double lenght();
     double& operator[](int i);
     const double& operator[](int i) const;
     friend ostream& operator<<(ostream& out, const vector& v) {

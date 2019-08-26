@@ -124,7 +124,7 @@ const double& vector::operator[](int i) const {
     return x[i - 1];
 }
 //-------------------Различные методы-----------------------
-double vector::lenght() {//длинна вектора
+const double vector::lenght() {//длинна вектора
     double len = 0;
     for (int i = 0; i < n; i++) 
         len = len + x[i] * x[i];
