@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
@@ -219,38 +219,48 @@ void main()
         printf("Введите метод сортировки:\n1-сортировка выбором\n2-сортировка вставками\n3-сортировка пузырьком\n4-сортировка подсчётом\n5-сортировка Хоара\n6-сортировка слиянием\n");
         scanf("%d", &t);
         printf("Список файлов: \n");
-        start = clock();
         switch (t)
         {
         case 1:
+            start = clock();
             SORT_CHOICE(fSize, fIndex, kol);
+            end = clock();
             OUTPUT(fIndex, fName, fSize, kol);
             break;
         case 2:
+            start = clock();
             SORT_INSERT(fSize, fIndex, kol);
+            end = clock();
             OUTPUT(fIndex, fName, fSize, kol);
             break;
         case 3:
+            start = clock();
             SORT_BUBBLE(fSize, fIndex, kol);
+            end = clock();
             OUTPUT(fIndex, fName, fSize, kol);
             break;
         case 4:
+            start = clock();
             SORT_COUNT(fSize, fIndex, kol);
+            end = clock();
             OUTPUT(fIndex, fName, fSize, kol);
             break;
         case 5:
+            start = clock();
             SORT_HOARA1(fSize, fIndex, 0, kol - 1);
+            end = clock();
             OUTPUT(fIndex, fName, fSize, kol);
             break;
         case 6:
+            start = clock();
             SORT_MERGE1(fSize, fIndex, 0, kol - 1);
+            end = clock();
             OUTPUT(fIndex, fName, fSize, kol);
             break;
         default:
             printf("Неверный ввод, попробуйте еще раз\n");
             continue;
         }
-        end = clock();
         T_TIME_T = (float)(end - start) / CLOCKS_PER_SEC;
         printf("Время сортировки: %.3f с\n", T_TIME_T);
 
