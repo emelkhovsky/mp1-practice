@@ -14,8 +14,8 @@ public:
     container(T**, int);
     ~container();
 
-    bool full();
-    bool empty();
+    bool full() const;
+    bool empty() const;
 
     int search(T*);
     void add(const T*);
@@ -81,12 +81,12 @@ container<T*, maxsize>::~container() {
 }
 //------------определение пустой/полный--------------//сделано
 template<typename T, int maxsize>
-bool container<T*, maxsize>::full() {
+bool container<T*, maxsize>::full()  const{
     return(count == maxsize);
 }
 
 template<typename T, int maxsize>
-bool container<T*, maxsize>::empty() {
+bool container<T*, maxsize>::empty()  const{
     return(count == 0);
 }
 //-----------------основные функции-------------------
