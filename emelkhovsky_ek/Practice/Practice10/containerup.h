@@ -95,7 +95,6 @@ int container<T*, maxsize>::search(T* element) const{
     for (int i = 0; i < count; i++)
         if (a[i] == element)
             return i;
-    cout << "The element is not found!" << endl;
     return -1;
 }
 
