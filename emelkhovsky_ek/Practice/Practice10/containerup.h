@@ -113,10 +113,8 @@ void container<T*, maxsize>::del(T* index) {
         throw emptycont();
     if ((index < 0) || (index > maxsize))
         throw uncorrectsize();
-    int i;
-    for (i = index; i < count; i++)
-        a[i] = a[i + 1];
-    a[i + 1] = 0;
+    a[index] = a[count]
+    a[count] = 0;
     count--;
 }
 //---------------операции связанные с []--------------------

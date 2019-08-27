@@ -91,7 +91,6 @@ public:
         for (int i = 0; i < count; i++)
             if (a[i] == element)
                 return i;
-        cout << "The element is not found!" << endl;
         return -1;
     }
 
@@ -109,13 +108,9 @@ public:
             throw emptycont();
         if ((index < 0) || (index > maxsize)) 
             throw uncorrectsize();
-        int i;
-        for (i = index; i < count; i++)
-            a[i] = a[i + 1];
-        a[i + 1] = 0;
+        a[index] = a[count]
+        a[count] = 0;
         count--;
-
-        
     }
     //---------------операции связанные с []--------------------
     template<typename T, int maxsize>
