@@ -16,7 +16,7 @@ public:
     bool full() const;
     bool empty() const;
 
-    int search(T);
+    int search(T) const;
     void add(const T);
     void del(T);
 
@@ -82,7 +82,7 @@ public:
     }
 
     template<typename T, int maxsize>
-    bool container<T, maxsize>::empty() {
+    bool container<T, maxsize>::empty() const{
         return(count == 0);
     }
     //-----------------основные функции-------------------

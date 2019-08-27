@@ -17,7 +17,7 @@ public:
     bool full() const;
     bool empty() const;
 
-    int search(T*);
+    int search(T*) const;
     void add(const T*);
     void del(T*);
 
@@ -91,7 +91,7 @@ bool container<T*, maxsize>::empty()  const{
 }
 //-----------------основные функции-------------------
 template<typename T, int maxsize>//поиск заданного элемента
-int container<T*, maxsize>::search(T* element) {
+int container<T*, maxsize>::search(T* element) const{
     for (int i = 0; i < count; i++)
         if (a[i] == element)
             return i;
