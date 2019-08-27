@@ -24,8 +24,8 @@ public:
     matrix& operator+=(int con);
     matrix& operator-=(int con);
     matrix& operator*=(int con);
-    int& operator[](int index);
-    const int& operator[](int index) const;
+    float* operator[](int index);
+    const float* operator[](int index) const;
     friend ostream& operator<<(ostream& out, const matrix& m) {
         out << "(";
         int t = 0;

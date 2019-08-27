@@ -120,15 +120,15 @@ matrix& matrix::operator*=(int con) {
     return *this;
 }
 //--------------остальные функции и перегрузки----------------
-int& matrix::operator[](int index) {
+float* matrix::operator[](int index) {
     if ((index < 0) || (index >= rows))
         throw matrixindex();
-    return(mat[index]);
+    return(mat + columns * index);
 }
-const int& matrix::operator[](int index) const{
+const float* matrix::operator[](int index) const{
     if ((index < 0) || (index >= rows))
         throw matrixindex();
-    return(mat[index]);
+    return(mat + columns * index);
 }
 
 //-----------------------исключения-----------------------
