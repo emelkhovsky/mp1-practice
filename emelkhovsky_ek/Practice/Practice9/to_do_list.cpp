@@ -16,12 +16,13 @@ todolist::~todolist(){
     delete[] * tasks;
 }
 
-void todolist::read() {
+void todolist::read(const string namefile) {
     string describe1;
     int n; //тип задания
     date dat;
     time start, finish;
-    ifstream f("list_of_tasks.txt");
+    ifstream file;
+    file.open(namefile);
     if (!f.is_open())
         throw notopenfile();
     f >> count; //кол-во заданий

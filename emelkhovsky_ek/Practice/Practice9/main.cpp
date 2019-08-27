@@ -16,7 +16,7 @@ int main(){
         std::cout << "Not correct date!";
     }
     try {
-        list.read();
+        list.read("list_of_tasks.txt");
     }
     catch (notcorrecttype) {
         std::cout << "Not correct type!";

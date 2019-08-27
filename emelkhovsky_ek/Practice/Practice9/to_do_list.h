@@ -13,7 +13,7 @@ class todolist
 public:
     todolist();
     ~todolist();
-    void read();
+    void read(const string namefile);
     void print(date dat);
 };
 class notopenfile : std::exception {
